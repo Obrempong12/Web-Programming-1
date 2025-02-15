@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        .preview {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: none;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contact Us</h2>
+    <form id="contactForm" method="POST" action="submit_form.php">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError">Name is required.</span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span class="error" id="emailError">Enter a valid email.</span>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone">
+        <span class="error" id="phoneError">Enter a 10-digit phone number.</span>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <span class="error" id="messageError">Message is required.</span>
+
+        <label>Preferred Contact Method:</label>
+        <input type="radio" name="contactMethod" value="Email" checked> Email
+        <input type="radio" name="contactMethod" value="Phone"> Phone
+        <input type="radio" name="contactMethod" value="Both"> Both
+
+        <label for="inquiryType">Inquiry Type:</label>
+        <select id="inquiryType" name="inquiryType">
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Support Request">Support Request</option>
+            <option value="Feedback">Feedback</option>
+        </select>
+
+        <button type="button" onclick="previewForm()">Preview</button>
+        <button type="submit" onclick="return validateForm()">Submit</button>
+    </form>
+
+    <div class="preview" id="previewSection">
+        <h3>Preview Your Input</h3>
+        <p><strong>Name:</strong> <span id="previewName"></span></p>
+        <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="previewPhone"></span></p>
+        <p><strong>Message:</strong> <span id="previewMessage"></span></p>
+        <p><strong>Preferred Contact Method:</strong> <span id="previewContactMethod"></span></p>
+        <p><strong>Inquiry Type:</strong> <span id="previewInquiryType"></span></p>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        let isValid = true;
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        document.getElementById("nameError").style.display = name ? "none" : "block";
+        document.getElementById("emailError").style.display = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) ? "none" : "block";
+        document.getElementById("phoneError").style.display = /^\d{10}$/.test(phone) ? "none" : "block";
+        document.getElementById("messageError").style.display = message ? "none" : "block";
+
+        if (!name || !email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/) || !phone.match(/^\d{10}$/) || !message) {
+            isValid = false;
+        }
+        return isValid;
+    }
+
+    function previewForm() {
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let message = document.getElementById("message").value.trim();
+        let contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
+        let inquiryType = document.getElementById("inquiryType").value;
+
+        document.getElementById("previewName").innerText = name;
+        document.getElementById("previewEmail").innerText = email;
+        document.getElementById("previewPhone").innerText = phone;
+        document.getElementById("previewMessage").innerText = message;
+        document.getElementById("previewContactMethod").innerText = contactMethod;
+        document.getElementById("previewInquiryType").innerText = inquiryType;
+
+        document.getElementById("previewSection").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
