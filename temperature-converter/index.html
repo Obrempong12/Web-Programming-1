@@ -4,45 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        .container {
-            width: 300px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        input, select, button {
-            width: 100%;
-            margin: 5px 0;
-            padding: 8px;
-            font-size: 16px;
-        }
-        button {
-            background-color: blue;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkblue;
-        }
-        #result {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .error {
-            color: red;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -53,43 +15,11 @@
             <option value="CtoF">Celsius to Fahrenheit</option>
             <option value="FtoC">Fahrenheit to Celsius</option>
         </select>
-        <button onclick="convertTemperature()">Convert</button>
+        <button id="convertBtn">Convert</button>
         <p id="result"></p>
         <p class="error" id="errorMessage"></p>
     </div>
 
-    <script>
-        function convertTemperature() {
-            let tempInput = document.getElementById("temperatureInput").value;
-            let conversionType = document.getElementById("conversionType").value;
-            let resultElement = document.getElementById("result");
-            let errorMessage = document.getElementById("errorMessage");
-
-            // Clear previous messages
-            resultElement.innerHTML = "";
-            errorMessage.innerHTML = "";
-
-            // Validate input (must be a number)
-            if (isNaN(tempInput) || tempInput === "") {
-                errorMessage.innerHTML = "Please enter a valid number!";
-                return;
-            }
-
-            let tempValue = parseFloat(tempInput);
-            let convertedTemp;
-            let unit;
-
-            if (conversionType === "CtoF") {
-                convertedTemp = (9 / 5) * tempValue + 32;
-                unit = `${tempValue} °C is ${convertedTemp.toFixed(2)} °F`;
-            } else {
-                convertedTemp = (5 / 9) * (tempValue - 32);
-                unit = `${tempValue} °F is ${convertedTemp.toFixed(2)} °C`;
-            }
-
-            resultElement.innerHTML = unit;
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
