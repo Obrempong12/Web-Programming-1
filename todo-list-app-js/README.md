@@ -11,51 +11,8 @@ A simple and interactive To-Do List application built using **HTML, CSS, and Jav
 - 🖥 **User-friendly UI:** Simple and clean design.
 - 🏗 **Efficient Event Handling:** Uses event delegation for better performance.
 
-## 📸 Screenshots
-
-![Screenshot of To-Do List](screenshot.png)  
-
-## 🛠️ Technologies Used
-
-- **HTML** - Structure of the app
-- **CSS** - Styling and layout
-- **JavaScript** - Interactivity and event handling
-
-## 📥 Installation
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/Obrempong12/todo-list-app-js.git
-
-2. **Navigate into the folder:**
-cd todo-list-app-js
-Here's a good repository name for your project:  
-
-📌 **Repository Name:** `todo-list-app-js`  
-
-And here is your **README.md** file:  
-
----
-
-### 📄 **README.md**  
-
-```md
-# To-Do List App
-
-A simple and interactive To-Do List application built using **HTML, CSS, and JavaScript**. This project allows users to **add, edit, remove, and mark tasks as completed** using an intuitive interface.
-
-## 🚀 Features
-
-- ✅ **Add Tasks:** Users can input new tasks.
-- ✏️ **Edit Tasks:** Modify existing tasks.
-- ❌ **Remove Tasks:** Delete unwanted tasks.
-- 📌 **Mark Complete:** Strike-through completed tasks.
-- 🖥 **User-friendly UI:** Simple and clean design.
-- 🏗 **Efficient Event Handling:** Uses event delegation for better performance.
-
-## 📸 Screenshots
-
-![Screenshot of To-Do List](screenshot.png)  
+## 📸 ![image](https://github.com/user-attachments/assets/b979f0e7-fabf-4de6-9189-71e67d9d103c)
+![image](https://github.com/user-attachments/assets/8754f418-9f70-4181-80c0-27b0a5c9db22)
 
 ## 🛠️ Technologies Used
 
