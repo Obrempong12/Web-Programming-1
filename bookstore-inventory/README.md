@@ -20,7 +20,7 @@ bookstore-inventory/
 - Styled using **CSS** for better readability  
 
 ## 📸 Preview  
-![Bookstore Inventory Preview](https://github.com/Obrempong12/bookstore-inventory/blob/main/preview.png)
+![image](https://github.com/user-attachments/assets/cf005b3b-c651-4d0e-ae0e-fe58f205c1bb)
 
 ## 🛠️ Technologies Used  
 - **HTML** for structuring content  
