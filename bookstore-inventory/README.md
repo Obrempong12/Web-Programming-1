@@ -1,5 +1,4 @@
 ---
-
 # 📚 Bookstore Inventory  
 
 A simple web application that dynamically displays a list of books in a bookstore inventory using **HTML, CSS, and JavaScript**.  
@@ -20,7 +19,7 @@ bookstore-inventory/
 - Styled using **CSS** for better readability  
 
 ## 📸 Preview  
-![image](https://github.com/user-attachments/assets/cf005b3b-c651-4d0e-ae0e-fe58f205c1bb)
+![BookStore](https://github.com/user-attachments/assets/3362991d-1ebe-435b-bcb5-bbe8e950c458)
 
 ## 🛠️ Technologies Used  
 - **HTML** for structuring content  
